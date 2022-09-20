@@ -1,5 +1,5 @@
 <?php
-include "EstudianteModel.php";
+include "vacunasModel.php";
 $nuevoEstudiante = new Estudiante();
 
 /*GUARDAR*/
