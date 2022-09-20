@@ -49,7 +49,7 @@
                             }
                             ?>
                         
-                <input type="submit" value="Eliminar Estudiante" name="btnEliminar">            
+                <input type="submit" value="Editar Estudiante" name="btnEditar">            
     </form>
 </body>
 </html>
