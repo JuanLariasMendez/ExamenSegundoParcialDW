@@ -1,5 +1,5 @@
 <?php
-include "vacunasModel.php";
+include "vacunaModel.php";
 $nuevoEstudiante = new Estudiante();
 
 /*GUARDAR*/
@@ -9,16 +9,16 @@ if(isset($_POST['btnGuardar']))
     header('Location: agregarmascota.php');
 }
 else
-if(isset($_POST['btnEditar']))
+if(isset($_POST['btnAgregar']))
 {
- $nuevoEstudiante->EditarEstudiante($_POST['idStudent'],$_POST['txtapellidos'],$_POST['txtnombre'],$_POST['txtdireccion'],$_POST['txttelefono']); 
- header('Location: VistaEstudiante.php');
+ $nuevoEstudiante->EditarEstudiante($_POST['idmascota'],$_POST['vacuna']); 
+ header('Location: listarmascota.php');
         
 }
-if(isset($_POST['btnEliminar']))
+if(isset($_POST['btnEditar']))
 {
- $nuevoEstudiante->EliminarEstudiante($_POST['idStudent'],$_POST['txtapellidos'],$_POST['txtnombre'],$_POST['txtdireccion'],$_POST['txttelefono']); 
- header('Location: VistaEstudiante.php');
+ $nuevoEstudiante->EliminarEstudiante($_POST['idmascota'],$_POST['nombreMascota']); 
+ header('Location: listarmascota.php');
         
 }
 

@@ -27,14 +27,10 @@
         </p>
         <p>
             <label for="nombreMascota">Nombre:</label>
-            <input type="text" class = "form-control" name="nombreMascota" value="<?php echo $resultadoFiltrado['nombreMascota']?>" readonly="readonly">
-        </p>
+            <input type="text" class = "form-control" name="nombreMascota" value="<?php echo $resultadoFiltrado['nombreMascota']?>">
+        </p>                          
         <p>
-            <label for="vacuna">Vacuna:</label>
-            <input type="text" class = "form-control" name="vacuna">
-        </p>                            
-        <p>
-            <input type="submit" class = "form-control" value="AGREGAR VACUNA" name = "btnAgregar">
+            <input type="submit" class = "form-control" value="AGREGAR VACUNA" name = "btnEditar">
         </p>
                         <?php
                             }

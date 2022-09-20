@@ -17,7 +17,7 @@ class Estudiante
         $this->telefono = $tel;
     }*/
 
-    public function GuardarEstudiante($ape,$nom,$dir,$tel)
+    public function GuardarEstudiante($nom)
     {
        /*CONEXION A LA BASE DE DATOS*/ 
        $nuevaConexion = new conexion();
@@ -35,7 +35,7 @@ class Estudiante
     {
       $OtraConexion = new conexion();
       $nuevoComando = $OtraConexion->Conectar();
-      $resultado = $nuevoComando->query("Select * from estudiantes");
+      $resultado = $nuevoComando->query("Select * from mascota");
       if(!$resultado)
       {
         echo "Error Al intentar realizar Consulta de Estudiantes...".mysqli_error($nuevoComando);
@@ -48,21 +48,30 @@ class Estudiante
     {
       $nuevaConexion = new conexion();
       $nuevoComando = $nuevaConexion->Conectar();
-      $resultado = $nuevoComando->query("Select * from estudiantes where idestudiante=$id");
+      $resultado = $nuevoComando->query("Select * from mascota where idmascota=$id");
       return $resultado;
     }
 
-    public function EditarEstudiante($id,$apel,$nom,$dir,$tel)
+    public function EditarEstudiante($id,$vac)
     {
       $nuevaConexion = new conexion();
       $nuevoComando = $nuevaConexion->Conectar();
-      $nuevoComando->query("Update estudiantes set apellidos="."'".$apel."',nombre="."'".$nom."',direccion="."'".$dir."',telefono="."'".$tel."'"." where idestudiante = $id");
+      $idVacuna = $nuevoComando -> real_escape_string($_POST["idmascota"]);
+      $nomVacuna = $nuevoComando -> real_escape_string($_POST["vacuna"]);
+
+      $nuevoComando = $nuevaConexion->Conectar();
+      $nuevoComando->query("insert into vacuna (nombreVacuna, idmascota ) 
+      values ('$nomVacuna','$idVacuna')");
     }
 
-    public function EliminarEstudiante($id,$apel,$nom,$dir,$tel)
+    public function EliminarEstudiante($id,$nom)
     {
       $nuevaConexion = new conexion();
       $nuevoComando = $nuevaConexion->Conectar();
-      $nuevoComando->query(" delete from estudiantes where idestudiante = $id");
+      $idVacuna = $nuevoComando -> real_escape_string($_POST["idmascota"]);
+      $nomVacuna = $nuevoComando -> real_escape_string($_POST["nombreMascota"]);
+
+      $nuevoComando = $nuevaConexion->Conectar();
+      $nuevoComando->query("update mascota set nombreMascota = '$nomVacuna' where idmascota = $idVacuna"); 
     }
 }

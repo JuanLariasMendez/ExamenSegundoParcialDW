@@ -18,19 +18,19 @@
         <th>Mascota</th>
         <th colspan="2">ACCIONES</th>
     <?php
-        include_once "MascotaModel.php";
-        $Estudiante = new Mascota();
-        $ListaEstudiantes = $Estudiante->ListarMascotas();
+        include_once "vacunaModel.php";
+        $Estudiante = new Estudiante();
+        $ListaEstudiantes = $Estudiante->ListarEstudiantes();
         while($Estudiantes = mysqli_fetch_assoc($ListaEstudiantes))
         {?>
           <tr>
-                <td>  <?php echo $Estudiantes['id'] ?> </td>
-                <td>  <?php echo $Estudiantes['nombre'] ?> </td>
+                <td>  <?php echo $Estudiantes['idmascota'] ?> </td>
+                <td>  <?php echo $Estudiantes['nombreMascota'] ?> </td>
                 <td style="text-align: left;">
-                <a href="agregar.php?idEst=<?php echo $Estudiantes ['id'] ?>"><img alt="agregar" src="agregar.png">
+                <a href="Agregarvacuna.php?idEst=<?php echo $Estudiantes ['idmascota'] ?>"><img alt="agregar" src="agregarDW.png">
                 </td>
                 <td style="text-align: left;">
-                <a href="editar.php?idEst=<?php echo $Estudiantes ['id'] ?>"><img alt="editar" src="editar.png">
+                <a href="editar.php?idEst=<?php echo $Estudiantes ['idmascota'] ?>"><img alt="agregar" src="editarDW.png">
                 </td>
           </tr>
           
