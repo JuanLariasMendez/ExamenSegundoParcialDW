@@ -17,7 +17,11 @@
         }
 
         #menu ul li{
-            
+            display: inline-block;
+        }
+
+        #menu ul li a{
+            color: black;
         }
 
     </style>
