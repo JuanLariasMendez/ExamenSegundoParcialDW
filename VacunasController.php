@@ -5,8 +5,8 @@ $nuevoEstudiante = new Estudiante();
 /*GUARDAR*/
 if(isset($_POST['btnGuardar']))
 {
-    $nuevoEstudiante->GuardarEstudiante($_POST['apellidos'],$_POST['nombre'],$_POST['direccion'],$_POST['telefono']);
-    header('Location: VistaEstudiante.php');
+    $nuevoEstudiante->GuardarEstudiante($_POST['nombre']);
+    header('Location: agregarmascota.php');
 }
 else
 if(isset($_POST['btnEditar']))
