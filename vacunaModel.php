@@ -22,14 +22,14 @@ class Estudiante
        /*CONEXION A LA BASE DE DATOS*/ 
        $nuevaConexion = new conexion();
        $ComandoConexion = $nuevaConexion->Conectar();
-       $ComandoConexion->query("insert into estudiantes (apellidos,nombre,direccion,telefono) values ("."'".$_POST['apellidos']."','".$_POST['nombre']."','".$_POST['direccion']."','".$_POST['telefono']."')" );
+       $ComandoConexion->query("insert into mascota (nombreMascota) values ("."'".$_POST['nombre']."')" );
 
        if(!$ComandoConexion)
        {
         echo "Ocurriò un error al insertar el registro....".mysqli_error($ComandoConexion);
        }
        /*echo "Registro agregado exitosamente";*/
-       header("Location: VistaEstudiante.php");
+       header("Location: agregarmascota.php");
     }
     public function ListarEstudiantes()
     {
